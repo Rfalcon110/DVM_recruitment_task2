@@ -1,0 +1,48 @@
+<html>
+<head>
+<style>
+    body{
+        background-color: #282a36;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: ##ffb86c;
+      }
+      
+      li {
+        float: right;
+      }
+      
+      li a {
+        display: block;
+        color: #bd93f9;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover:not(.active) {
+        background-color: #44475a;
+      }
+      
+      .active {
+        background-color: #ff5555;
+      }
+</style>
+<ul>
+    <li><a href="register">Register</a>
+    </li>
+    <li><a href="login">Login</a>
+    </li>
+    <li><a href="logout">Logout</a>
+    </li>
+    <li><a href="index.html">Link</a>
+    </li>
+</ul>
+</head>
+<body>
+    {% block content %}{% endblock %}</body>
+</html>

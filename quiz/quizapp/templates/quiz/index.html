@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'quiz/navbar1.html'%}
+{%block content%}
+{% if quiz_list %}
+    <ul>
+    {% for quiz in quiz_list %}
+        <li><a href="/quiz/{{ quiz.quiz_name }}/">{{ quiz.quiz_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No quizzes are available.</p>
+{% endif %}
+{%endblock%}

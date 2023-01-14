@@ -1,0 +1,30 @@
+
+{% extends 'quiz/dependencies.html' %}
+
+{% block content %}
+<h1>{{quizz}}</h1>
+<form method='post'>
+    {% csrf_token %}
+    {% for q  in question_list%}
+    <div class="UserForm" name ='quiz' id='quizz'>
+      <label for="question">{{q.question_text}}</label>
+      <div>
+      <input type='radio'name={{q.question_text}} value={{q.choice_1}}>
+      {{q.choice_1}}
+      </div>
+      <div>
+      <input type='radio'name={{q.question_text}} value ={{q.choice_2}}>
+      {{q.choice_2}}
+      </div>
+       <input type='radio' name={{q.question_text}} value ={{q.choice_3}}>
+       {{q.choice_3}}
+      <div>
+      <input type='radio'name={{q.question_text}} value ={{q.choice_4}}>
+      {{q.choice_4}}
+      </div>
+    </div>
+    {% endfor %}
+    <button type="submit" value='submit'>submit</button>
+  </form>
+  {%endblock%}
+  
