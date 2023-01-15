@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-#Create your models here.
 class Quiz(models.Model):
     quiz_name=models.CharField(max_length=200,) 
 
@@ -21,11 +20,8 @@ class Question(models.Model):
     author=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     def  __str__(self):
         return self.question_text
-    def is_ans_correct(answer_given,answer):
-        if answer_given==answer:
-            return True
-        else:
-            return False
+
+
 class Result(models.Model):
     quiz=models.ForeignKey(Quiz,on_delete=models.CASCADE,null=True,blank=True)
     user=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
@@ -34,8 +30,7 @@ class Result(models.Model):
     total=models.IntegerField(default=0)
     quiz_given=models.BooleanField(default=False)  
  
-class QuizTaker(models.Model):
-    user=models.OneToOneField(User, on_delete=models.CASCADE)      
+      
 
 
 

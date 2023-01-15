@@ -1,30 +1,31 @@
 
-{% extends 'quiz/dependencies.html' %}
-
+{% extends 'quiz/base.html' %}
 {% block content %}
-<h1>{{quizz}}</h1>
+<h1 class="quizhead">{{quizz}}</h1>
 <form method='post'>
     {% csrf_token %}
     {% for q  in question_list%}
-    <div class="UserForm" name ='quiz' id='quizz'>
-      <label for="question">{{q.question_text}}</label>
+    <div class="w3-container w3-card-4" name ='quiz' id='quizz'>
+      <label class="queslabel" for="question">{{q.question_text}}</label>
       <div>
-      <input type='radio'name={{q.question_text}} value={{q.choice_1}}>
-      {{q.choice_1}}
+      <input id="{{q.choice_1}}" class="ansinput" type='radio'name={{q.question_text}} value={{q.choice_1}}>
+      <label class= "qchoice" for="{{q.choice_1}}">{{q.choice_1}}</label>
       </div>
       <div>
-      <input type='radio'name={{q.question_text}} value ={{q.choice_2}}>
-      {{q.choice_2}}
+      <input id="{{q.choice_2}}" class="ansinput" type='radio'name={{q.question_text}} value ={{q.choice_2}}>
+      <label class= "qchoice" for="{{q.choice_2}}">{{q.choice_2}}</label>
       </div>
-       <input type='radio' name={{q.question_text}} value ={{q.choice_3}}>
-       {{q.choice_3}}
+       <input id="{{q.choice_3}}" class="ansinput" type='radio' name={{q.question_text}} value ={{q.choice_3}}>
+       <label class= "qchoice" for="{{q.choice_3}}">{{q.choice_3}}</label>
       <div>
-      <input type='radio'name={{q.question_text}} value ={{q.choice_4}}>
-      {{q.choice_4}}
+      <input id="{{q.choice_4}}" class="ansinput" type='radio'name={{q.question_text}} value ={{q.choice_4}}>
+      <label class= "qchoice" for="{{q.choice_4}}">{{q.choice_4}}</label>
       </div>
     </div>
     {% endfor %}
-    <button type="submit" value='submit'>submit</button>
+    <div class="w3-container w3-center">
+    <button class="submitbtn" type="submit" value='submit'>submit</button>
+  </div>
   </form>
   {%endblock%}
   

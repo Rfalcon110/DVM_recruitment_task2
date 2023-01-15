@@ -1,17 +1,17 @@
-
- 
-<div class="jumbotron container row">
-    <div class="col-md-6">
-        <h1>Add Question</h1>
-        <div class="card card-body">
-           <form action="" method="POST">
-              {% csrf_token %}
-                {{form.as_p}}
-                <br>
-             <input type="submit" name="Submit">
-             </form>
-            </div>
-        </div>
-    </div>
- 
+{% extends 'quiz/base.html'%}
+{%block content%} 
+<div>
+    <div>
+    <h1 class="quizhead">Add Question</h1>
+    <div class="qform">
+    <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <br>
+    <div class="w3-container w3-center">
+    <input class="qformsubmit" type="submit" name="Submit">
 </div>
+    </form>
+    </div>
+</div>
+{%endblock%}

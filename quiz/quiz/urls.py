@@ -26,8 +26,10 @@ urlpatterns = [
    path('login/',auth_views.LoginView.as_view(template_name='users/login.html'),name='login'),
    path('logout/', user_views.logoutPage,name='logout'),
    path('',user_views.home,name='home'),
-   path('add_question/',quiz_views.addQuestion,name='add_question'),
-   path('add_quiz/',quiz_views.addquiz,name='add_quiz'),
-   path('editquiz/',quiz_views.editquizzes,name='edit'),
-   path('registeradmin/',user_views.register_as_admin,name= 'registeradmin')
+   path('addquestion/',quiz_views.addQuestion,name='addquestion'),
+   path('addquiz/',quiz_views.addquiz,name='addquiz'),
+   path('registeradmin/',user_views.register_as_admin,name= 'registerqm'),
+   path('edit/',quiz_views.edit_index,name='editindex'),
+   path('edit/<str:quiz_name1>/',quiz_views.edit_quiz,name='editquiz'),
+   path('edit/<str:quiz_name1>/<str:id>/',quiz_views.editquestion,name='editquestion')
 ]

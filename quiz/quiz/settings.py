@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'quizapp.apps.QuizappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
-    'crispy_forms',
     'users.apps.UsersConfig',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -124,6 +123,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CRISPY_TEMPLATE_PACK='bootstrap4'
 LOGIN_REDIRECT_URL='index'
 LOGIN_URL='login'

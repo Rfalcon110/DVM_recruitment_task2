@@ -1,7 +1,21 @@
-{%load crispy_forms_tags%}
+{% extends 'quiz/base.html'%}
+{%block content%}
+<div>
 <form method='post'>
+<div class="lclass">
+  <h1 class="quizhead">Login</h1>
+  <div class="lform">
  {% csrf_token %}
-   {{form|crispy}}
-
-<button type="submit" value='submit'>log in</button>
+   {{form}}
+<br>
+  </div>
+  </div>  
+<div class="w3-container w3-center">
+<button class="qformsubmit" type="submit" value='submit'>Login</button>
+</div>
 </form>
+<h3 class='quizhead'>dont have an account?</h3>
+<a href={% url 'register'%}>register</a>
+<a href={% url 'registerqm'%}>register as quiz master</a>
+</div>
+{%endblock%}
