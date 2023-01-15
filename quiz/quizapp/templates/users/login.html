@@ -7,15 +7,17 @@
   <div class="lform">
  {% csrf_token %}
    {{form}}
-<br>
   </div>
-  </div>  
+</div>
 <div class="w3-container w3-center">
 <button class="qformsubmit" type="submit" value='submit'>Login</button>
-</div>
+</div>  
 </form>
-<h3 class='quizhead'>dont have an account?</h3>
-<a href={% url 'register'%}>register</a>
-<a href={% url 'registerqm'%}>register as quiz master</a>
+<div>
+<h3 class='quizhead'>Don't have an account?</h3>
+<div class="w3-container w3-center">
+<a class="qformsubmit" href={% url 'register'%}>Register</a>
+<a class="qformsubmit" href={% url 'registerqm'%}>Register as Quiz Master</a> </div>
+</div>
 </div>
 {%endblock%}
